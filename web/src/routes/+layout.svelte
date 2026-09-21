@@ -1,7 +1,6 @@
 <script lang="ts">
   import "$lib/styles/global.css";
   import Header from "$lib/components/organisms/templates/Header.svelte";
-  import Footer from "$lib/components/organisms/templates/Footer.svelte";
   import { page } from "$app/state";
   
   let { children } = $props();

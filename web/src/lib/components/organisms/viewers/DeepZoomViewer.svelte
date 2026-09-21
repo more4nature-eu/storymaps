@@ -35,7 +35,7 @@
     #openseadragon-viewer {
         background-color: rgb(255, 255, 255);
         width: 100vw;
-        height: 100dvh;
+        height: 50dvh;
         margin: 0;
         padding: 0; 
     }

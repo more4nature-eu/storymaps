@@ -1,7 +1,7 @@
 <!-- src/lib/components/ui/SearchBar.svelte -->
 <script lang="ts">
     let { 
-        placeholder = "Cerca el teu municipi...",
+        placeholder = "Look for a place or activity...",
         onselectplace
     } = $props<{
         placeholder?: string;
