@@ -1,5 +1,6 @@
 <script lang="ts">
   import SearchBar from "$lib/components/atoms/SearchBar.svelte";
+  import ImgSliderContainer from "$lib/components/molecules/images/ImgSliderContainer.svelte";
   import Text from "$lib/components/molecules/text/Text.svelte";
   import ScrollyMap from "$lib/components/organisms/templates/ScrollyMap.svelte";
   import DeepZoomViewer from "$lib/components/organisms/viewers/DeepZoomViewer.svelte";
@@ -10,7 +11,7 @@
       id: "step-1-overview",
       isHeader: true,
       title: "",
-      description: "Community-led forest protection in Cambodia's Wildlife Sanctuaries.",
+      description: "",
       hasLegend: true,
       camera: { center: [103.991, 12.565], zoom: 7.2, pitch: 0, bearing: 0 },
       mobileCamera: { center: [104.991, 12.565], zoom: 6.2, pitch: 0, bearing: 0 }
@@ -46,7 +47,7 @@
     {
       id: 1,
       img: '/images/cambodian-deforestation/836DC191-D502-496E-A441-372CD78E5B7D.jpeg',
-      caption: 'Rangers patrolling protected areas.',
+      caption: 'Big log',
       aspectRatio: '4 / 5'
     },
     {
@@ -82,19 +83,35 @@
 
 <div class="story-container">
   <main class="main-layout">
-    <!-- TÍTOL AL FONS (z-index: 1) -->
     <div class="title-block">
       <h1 class="story-title">
-        From Viewers<br />to Rangers
+        From Viewers<br/>to Rangers
       </h1>
       <p class="story-subtitle">
         Logging control in Wildlife Protected Areas using images provided by the community.
       </p>
+      <img src="/images/cambodian-deforestation/CAMBODIA.svg" alt="cambodia_protected_areas" height="fit-content" width="300">
+      <p class="low-hight">
+        Main investigators
+      </p>
+      <p class="credits">
+        Ida Theilade & Dimitris Argyriou
+      </p>
+      <p class="low-hight">
+        Written by
+      </p>
+      <p class="credits">
+        Carlos Albaladejo 
+      </p>
+      <p class="low-hight">
+        Photografies
+      </p>
+      <p class="credits">
+        Prey Lang Community
+      </p>
     </div>
 
-    <!-- CAPA MOSAIC PER SOBRE (z-index: 10) AMB EFECTE BLUR -->
     <div class="mosaic-layer">
-      <!-- El moviment del ratolí s'aplica al contingut intern, no al fons del blur -->
       <div class="mosaic-parallax" style="transform: translate3d({mouseX}px, {mouseY}px, 0);">
         {#each photos as photo, i}
           <div class="photo-card pos-{i}">
@@ -106,11 +123,21 @@
         {/each}
       </div>
     </div>
+    </main>
     <Text>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.</p>
-        <SearchBar/>
+        <p>“Please take action to stop them, if not the forest and natural resources will be gone soon”. That was one of the urgent appeals from one of the xxx volunteers of the Pray Lang Community Network. A community that is trying to stop logging deforestation in one of the oldest verge forest in Cambodia, where XX hectares of tropical forest have been cut down over the past  XX years.</p>
     </Text>
-  </main>
+    <ImgSliderContainer
+        beforeImage="/images/cambodian-deforestation/prey_lang_landcover_2015.png"
+        afterImage="/images/cambodian-deforestation/Prey Lang area_landcover_2023.png"
+        beforeLabel = "2015"
+        afterLabel = "2023"
+        initialPos = {50}
+        alt = "Comparing images"/>
+    <Text>
+        <p>Faced with institutional inaction, local communities have organized to gather 2,400 geotagged evidence of illegal logging. "One of the biggest problems is that all the evidence obtained from satellite imagery is denied and treated as invalid by Cambodian authorities," explains Ida Theilade, lead researcher on the XXX project.</p>
+      <SearchBar/>
+    </Text>
   <DeepZoomViewer />
   <Text>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.</p>
@@ -133,7 +160,7 @@
 
   .title-block {
     position: sticky;
-    top: 30vh;
+    top: 15vh;
     max-width: 400px;
     padding-left: 4rem;
     z-index: 1;
@@ -207,10 +234,21 @@
     display: inline-block;
   }
 
-  .pos-0 { grid-column: 9 / span 7; margin-top: -22vh; }
+  .pos-0 { grid-column: 9 / span 7; margin-top: -65vh; }
   .pos-1 { grid-column: 1 / span 4; margin-top: 10vh; }
-  .pos-2 { grid-column: 7 / span 5; margin-top: 35vh; }
-  .pos-3 { grid-column: 3 / span 7; margin-top: 25vh; }
+  .pos-2 { grid-column: 7 / span 5; margin-top: 50vh; }
+  .pos-3 { grid-column: 5 / span 8; margin-top: 25vh; margin-bottom: -15vh; }
+
+  .low-hight {
+    font-weight: 300;
+    font-size: .85rem;
+    margin:.3rem 0;
+  }
+
+  .credits {
+    font-size: .95rem;
+    margin-top: 0rem;
+  }
 
   @media (max-width: 850px) {
     .title-block {

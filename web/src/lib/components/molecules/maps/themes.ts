@@ -63,7 +63,7 @@ export const THEMES: Record<string, MapTheme> = {
     'GLOBE_3D_WHITE': {
         id: 'globe-3d-white',
         center: [0, 20],
-        zoom:3,
+        zoom:2.7,
         mobileZoom: 2,
         minZoom: 0,
         maxPitch: 80,
@@ -88,6 +88,45 @@ export const THEMES: Record<string, MapTheme> = {
         },
         features: {
             autoRotate: true,
+            autoRotateSpeed: 3,
+            showTerrain: true,
+            showHillshade:true,
+            showRoads: false,
+            showStreetNames:false,
+            showBuildings: true,
+            showBuildings3D: false,
+            showCountriesNames: true,
+            showBoundariesADM0: true,
+        }
+    },
+    'CAMBODIA_WHITE': {
+        id: 'camb-3d-white',
+        center: [0, 20],
+        zoom:2.7,
+        mobileZoom: 2,
+        minZoom: 0,
+        maxPitch: 80,
+        projection: 'mercator',
+        colors: {
+            background: '#ffffffff',
+            water: '#fdfeff',
+            boundariesADM0: '#F8BA88',
+            boundariesWidthLine: .4, 
+            textureOpacity: 0.6,
+            roads: '#a09f9fff',
+            roadsLineWidth: 2,
+            roadsOpacity: 1,
+            buildings: '#9b9b9bff',
+            text: '#243B4A'
+        },
+            text: {
+            textField: 'name:en',
+            textFont: 'Lexend-Regular',
+            textSize: 10,
+            textAnchor: 'center'
+        },
+        features: {
+            autoRotate: false,
             autoRotateSpeed: 3,
             showTerrain: true,
             showHillshade:true,
