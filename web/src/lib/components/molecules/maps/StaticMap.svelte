@@ -124,7 +124,7 @@
 
     mapInstance.flyTo({
       center: [0, 20],
-      zoom: 3,
+      zoom: 2.7,
       pitch: 0,
       bearing: 0,
       speed: 1,
