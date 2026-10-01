@@ -5,6 +5,7 @@
   import ScrollyMap from "$lib/components/organisms/templates/ScrollyMap.svelte";
   import DeepZoomViewer from "$lib/components/organisms/viewers/DeepZoomViewer.svelte";
   import type { Chapter } from "$lib/types/chapter";
+  import { base } from '$app/paths';
 
   const Stories: Chapter[] = [
     {
@@ -46,25 +47,25 @@
   const photos = [
     {
       id: 1,
-      img: '/images/cambodian-deforestation/836DC191-D502-496E-A441-372CD78E5B7D.jpeg',
+      img: `${base}/images/cambodian-deforestation/836DC191-D502-496E-A441-372CD78E5B7D.jpeg`,
       caption: 'Description of the photograph explaining part of the problem',
       aspectRatio: '4 / 5'
     },
     {
       id: 2,
-      img: '/images/cambodian-deforestation/65B6F92C-63AF-4CC3-92E8-4E0CD83F00FD.jpeg',
+      img: `${base}/images/cambodian-deforestation/65B6F92C-63AF-4CC3-92E8-4E0CD83F00FD.jpeg`,
       caption: 'Description of the photograph explaining part of the problem',
       aspectRatio: '4 / 5' // Vertical
     },
     {
       id: 3,
-      img: '/images/cambodian-deforestation/8A5A5197-3371-4FCB-B4F8-397C2E806B90.jpeg',
+      img: `${base}/images/cambodian-deforestation/8A5A5197-3371-4FCB-B4F8-397C2E806B90.jpeg`,
       caption: 'Description of the photograph explaining part of the problem',
       aspectRatio: '4 / 5' // Quadrada
     },
     {
       id: 4,
-      img: '/images/cambodian-deforestation/A9159EBA-E3CD-41F7-86B5-430AD12D0709.jpeg',
+      img: `${base}/images/cambodian-deforestation/A9159EBA-E3CD-41F7-86B5-430AD12D0709.jpeg`,
       caption: 'Description of the photograph explaining part of the problem',
       aspectRatio: '3 / 2' // Horitzontal estàndard
     }
@@ -90,7 +91,7 @@
       <p class="story-subtitle">
         Logging control in Wildlife Protected Areas using images provided by the community.
       </p>
-      <img src="/images/cambodian-deforestation/CAMBODIA.svg" alt="cambodia_protected_areas" height="fit-content" width="300">
+      <img src="{base}/images/cambodian-deforestation/CAMBODIA.svg" alt="cambodia_protected_areas" height="fit-content" width="300">
       <p class="low-hight">
         Main investigators
       </p>
@@ -131,8 +132,8 @@
           Cambodia's oldest remaining forests. More than 120.829 hectares of tropical forest have been lost between 2001 and 2024.
         </p>
         <ImgSliderContainer
-          beforeImage="/images/cambodian-deforestation/prey_lang_landcover_2015.png"
-          afterImage="/images/cambodian-deforestation/Prey Lang area_landcover_2023.png"
+          beforeImage="{base}/images/cambodian-deforestation/prey_lang_landcover_2015.png"
+          afterImage="{base}/images/cambodian-deforestation/Prey Lang area_landcover_2023.png"
           beforeLabel = "2015"
           afterLabel = "2023"
           initialPos = {50}
