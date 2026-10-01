@@ -24,6 +24,7 @@ vite.config.ts.timestamp-*
 
 # Data dir
 
-static
+static/mosaic_logging_files
+static/mosaic_logging.dzi
 .vscode
 package-lock.json
