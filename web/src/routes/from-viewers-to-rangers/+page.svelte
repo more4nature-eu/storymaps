@@ -277,10 +277,10 @@
       width: 100%;
     }
 
-    .pos-0 { grid-column: 3 / span 10; margin-top: 0vh; }
+    .pos-0 { grid-column: 3 / span 10; margin-top: 20vh; }
     .pos-1 { grid-column: 1 / span 8; margin-top: 25vh; }
     .pos-2 { grid-column: 6 / span 7; margin-top: 10vh; }
-    .pos-3 { grid-column: 1 / span 12; margin-top: 20vh; }
+    .pos-3 { grid-column: 1 / span 12; margin-top: 20vh; margin-bottom: 5vh; }
 
     .photo-caption {
       font-size: 0.7rem;

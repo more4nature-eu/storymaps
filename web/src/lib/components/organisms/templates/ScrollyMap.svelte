@@ -116,7 +116,7 @@
 
 <div class="storymap-layout">
     <div class="map-wrapper" class:interactive-mode={isInteractiveMode}>
-        <MapBase themeName="GLOBE_3D_WHITE" bind:mapInstance={mapInstance} isInteractive={false}/>
+        <MapBase themeName="CAMBODIA_WHITE" bind:mapInstance={mapInstance} isInteractive={true}/>
         {#if activeChapterIndex >= 1}
             <div class="counter">En àrea visible s'ha guanyat X masa forestal</div>
         {/if}
