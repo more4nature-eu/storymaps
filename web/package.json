@@ -22,7 +22,7 @@
 		"vite": "^8.0.16"
 	},
 	"dependencies": {
-		"maplibre-gl": "^6.10.0",
+		"maplibre-gl": "^5.24.0",
 		"openseadragon": "^6.1.1",
 		"pmtiles": "^4.5.0"
 	}

@@ -71,13 +71,10 @@
   }
 
   onMount(async () => {
-  const [maplibre, pmtilesModule, workerModule] = await Promise.all([
+    const [{ Map, Marker, ScaleControl, addProtocol, config }, pmtilesModule] = await Promise.all([
       import('maplibre-gl'),
-      import('pmtiles'),
-      import('maplibre-gl/dist/maplibre-gl-worker.mjs?url')
+      import('pmtiles')
     ]);
-    const { Map, Marker, ScaleControl, addProtocol, config, setWorkerUrl } = maplibre;
-    setWorkerUrl(workerModule.default);
 
     const { Protocol } = pmtilesModule;
     
