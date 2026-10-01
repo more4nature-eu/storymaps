@@ -27,4 +27,3 @@ vite.config.ts.timestamp-*
 static/mosaic_logging_files
 static/mosaic_logging.dzi
 .vscode
-package-lock.json
