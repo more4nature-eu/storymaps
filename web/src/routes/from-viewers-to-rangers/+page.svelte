@@ -11,7 +11,7 @@
       id: "step-1-overview",
       isHeader: true,
       title: "",
-      description: "",
+      description: "Text text text",
       hasLegend: true,
       camera: { center: [103.991, 12.565], zoom: 7.2, pitch: 0, bearing: 0 },
       mobileCamera: { center: [104.991, 12.565], zoom: 6.2, pitch: 0, bearing: 0 }
@@ -47,25 +47,25 @@
     {
       id: 1,
       img: '/images/cambodian-deforestation/836DC191-D502-496E-A441-372CD78E5B7D.jpeg',
-      caption: 'Big log',
+      caption: 'Description of the photograph explaining part of the problem',
       aspectRatio: '4 / 5'
     },
     {
       id: 2,
       img: '/images/cambodian-deforestation/65B6F92C-63AF-4CC3-92E8-4E0CD83F00FD.jpeg',
-      caption: 'Evidence of illegal logging activity.',
+      caption: 'Description of the photograph explaining part of the problem',
       aspectRatio: '4 / 5' // Vertical
     },
     {
       id: 3,
       img: '/images/cambodian-deforestation/8A5A5197-3371-4FCB-B4F8-397C2E806B90.jpeg',
-      caption: 'Community members geotagging data.',
+      caption: 'Description of the photograph explaining part of the problem',
       aspectRatio: '4 / 5' // Quadrada
     },
     {
       id: 4,
       img: '/images/cambodian-deforestation/A9159EBA-E3CD-41F7-86B5-430AD12D0709.jpeg',
-      caption: 'Canopy monitoring and satellite verification.',
+      caption: 'Description of the photograph explaining part of the problem',
       aspectRatio: '3 / 2' // Horitzontal estàndard
     }
   ];
@@ -125,25 +125,47 @@
     </div>
     </main>
     <Text>
-        <p>“Please take action to stop them, if not the forest and natural resources will be gone soon”. That was one of the urgent appeals from one of the xxx volunteers of the Pray Lang Community Network. A community that is trying to stop logging deforestation in one of the oldest verge forest in Cambodia, where XX hectares of tropical forest have been cut down over the past  XX years.</p>
+        <p>
+          "Please take action to stop them, or the forest and natural resources will be gone soon." This was one of the urgent appeals from a volunteer of the Prey 
+          Lang Community Network (PLCN), a group that has been working for more than 20 years to stop illegal logging in one of 
+          Cambodia's oldest remaining forests. More than 120.829 hectares of tropical forest have been lost between 2001 and 2024.
+        </p>
+        <ImgSliderContainer
+          beforeImage="/images/cambodian-deforestation/prey_lang_landcover_2015.png"
+          afterImage="/images/cambodian-deforestation/Prey Lang area_landcover_2023.png"
+          beforeLabel = "2015"
+          afterLabel = "2023"
+          initialPos = {50}
+          alt = "Comparing images"/>
+        <p>
+          Prey Lang Wildlife Sanctuary was declared a protected area in 2016, yet, paradoxically, illegal activity has increased. 
+          In 2020, authorities banned PLCN from patrolling the sanctuary, and illegal logging rose sharply afterwards. 
+          (Quote from an investigator explaining why.) 
+        </p>
     </Text>
-    <ImgSliderContainer
-        beforeImage="/images/cambodian-deforestation/prey_lang_landcover_2015.png"
-        afterImage="/images/cambodian-deforestation/Prey Lang area_landcover_2023.png"
-        beforeLabel = "2015"
-        afterLabel = "2023"
-        initialPos = {50}
-        alt = "Comparing images"/>
+    <ScrollyMap chapters={Stories} />
     <Text>
-        <p>Faced with institutional inaction, local communities have organized to gather 2,400 geotagged evidence of illegal logging. "One of the biggest problems is that all the evidence obtained from satellite imagery is denied and treated as invalid by Cambodian authorities," explains Ida Theilade, lead researcher on the XXX project.</p>
+        <p>
+          Faced with institutional inaction, local communities have gathered 2,400 geotagged pieces of evidence of illegal logging. 
+          "One of the biggest problems is that all the evidence obtained from satellite imagery is denied and treated as invalid 
+          by Cambodian authorities," explains Ida Theilade, lead researcher on the … 
+        </p>
+    </Text>
+    <Text>
+      <h3>
+          Do you need more evidence? 
+      </h3>
       <SearchBar/>
     </Text>
   <DeepZoomViewer />
   <Text>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.</p>
+    <p>
+      Despite their achievements, PLCN members face ongoing harassment and arrests. A report from the same entity indicated that 12 people were arrested and 328,791 
+      cubic metres of wood were confiscated. Eleven of those arrested were sent to court, but activists say this was for show: 
+      “it targets small-time loggers while the big bosses remain free”. 
+    </p>
   </Text>
 </div>
-<ScrollyMap chapters={Stories} />
 
 <style>
   .story-container {
