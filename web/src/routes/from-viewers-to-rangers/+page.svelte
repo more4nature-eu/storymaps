@@ -69,10 +69,10 @@
         Carlos Albaladejo 
       </p>
       <p class="low-hight">
-        Photografies
+        Photographies
       </p>
       <p class="credits">
-        Prey Lang Community
+        Prey Lang Community Network
       </p>
     </div>
 
@@ -91,7 +91,7 @@
     </main>
     <Text>
         <p>
-          “Transporting timber everyday. Please take action to stop them, or the forest and natural resources will be gone soon.” The plea came from a 
+          “Transporting timber every day. Please take action to stop them, or the forest and natural resources will be gone soon.” The plea came from a 
           volunteer of the Prey Lang Community Network (PLCN), a coalition of villages that has spent more 
           than 20 years trying to protect one of Cambodia’s oldest remaining forests.
         </p>
@@ -112,7 +112,7 @@
           alt = "Comparing images"/>
         <span class="">Source data: <a href="opendevelopmentcambodia.net">OpenDevelopment Cambodia</a></span>
         <p>
-          In the last 20 tears the sanctuary  has lost <strong>21% of the tree cover</strong> it had in 2001. More than half of that loss came after 2018, when it was already protected.
+          In the last 20 years the sanctuary  has lost <strong>21% of the tree cover</strong> it had in 2001. More than half of that loss came after 2018, when it was already protected.
           In August 2023 the government expanded the sanctuary to almost 490,000 hectares. Conservationists asked how a ministry unable to protect the old borders would patrol the new ones.
         </p>
     </Text>        
