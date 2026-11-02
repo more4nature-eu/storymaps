@@ -4,72 +4,11 @@
   import Text from "$lib/components/molecules/text/Text.svelte";
   import ScrollyMap from "$lib/components/organisms/templates/ScrollyMap.svelte";
   import DeepZoomViewer from "$lib/components/organisms/viewers/DeepZoomViewer.svelte";
-  import type { Chapter } from "$lib/types/chapter";
   import { base } from '$app/paths';
 
-  const Stories: Chapter[] = [
-    {
-      id: "step-1-overview",
-      isHeader: true,
-      title: "",
-      description: "Text text text",
-      hasLegend: true,
-      camera: { center: [103.991, 12.565], zoom: 7.2, pitch: 0, bearing: 0 },
-      mobileCamera: { center: [104.991, 12.565], zoom: 6.2, pitch: 0, bearing: 0 }
-    },
-    {
-      id: "step-2-prey-lang",
-      isHeader: false,
-      title: "Prey Lang Sanctuary",
-      description: "One of Southeast Asia's oldest evergreen rainforests, facing severe threats from illegal logging operations.",
-      camera: { center: [105.52, 13.12], zoom: 11.5, pitch: 45, bearing: -20 },
-      mobileCamera: { center: [105.52, 13.12], zoom: 10.2, pitch: 35, bearing: -20 }
-    },
-    {
-      id: "step-3-community-patrols",
-      isHeader: false,
-      title: "Community Patrols",
-      description: "Indigenous rangers use geotagged imagery to document unauthorized clearings and send real-time alerts.",
-      camera: { center: [105.42, 13.02], zoom: 13.8, pitch: 55, bearing: 35 },
-      mobileCamera: { center: [105.42, 13.02], zoom: 12.2, pitch: 45, bearing: 25 }
-    },
-    {
-      id: "step-4-interactive",
-      isHeader: false,
-      title: "Explore Protected Zones",
-      description: "Explore the protected areas network and examine forest loss data across the country.",
-      camera: { center: [104.991, 12.565], zoom: 8.0, pitch: 0, bearing: 0 },
-      mobileCamera: { center: [104.991, 12.565], zoom: 7.0, pitch: 0, bearing: 0 }
-    }
-  ];
-
-  // Diferents aspect-ratios per donar varietat de tamanys i orientacions
-  const photos = [
-    {
-      id: 1,
-      img: `${base}/images/cambodian-deforestation/836DC191-D502-496E-A441-372CD78E5B7D.jpeg`,
-      caption: 'Description of the photograph explaining part of the problem',
-      aspectRatio: '4 / 5'
-    },
-    {
-      id: 2,
-      img: `${base}/images/cambodian-deforestation/65B6F92C-63AF-4CC3-92E8-4E0CD83F00FD.jpeg`,
-      caption: 'Description of the photograph explaining part of the problem',
-      aspectRatio: '4 / 5' // Vertical
-    },
-    {
-      id: 3,
-      img: `${base}/images/cambodian-deforestation/8A5A5197-3371-4FCB-B4F8-397C2E806B90.jpeg`,
-      caption: 'Description of the photograph explaining part of the problem',
-      aspectRatio: '4 / 5' // Quadrada
-    },
-    {
-      id: 4,
-      img: `${base}/images/cambodian-deforestation/A9159EBA-E3CD-41F7-86B5-430AD12D0709.jpeg`,
-      caption: 'Description of the photograph explaining part of the problem',
-      aspectRatio: '3 / 2' // Horitzontal estàndard
-    }
-  ];
+ import { chapters, photos, layers } from '$lib/data/D19';
+  import Legend from "$lib/components/molecules/legends/Legend.svelte";
+  import LegendItem from "$lib/components/molecules/legends/LegendItem.svelte";
 
   let mouseX = $state(0);
   let mouseY = $state(0);
@@ -78,18 +17,43 @@
     mouseX = (e.clientX / window.innerWidth - 0.5) * 30;
     mouseY = (e.clientY / window.innerHeight - 0.5) * 30;
   }
+
+  let scrollY = $state(0);
+  let innerHeight = $state(0);
+  let layoutEl = $state<HTMLElement>();
+
+  const BLUR_START = 0.2;
+  const BLUR_END = 0.9;
+  const MAX_BLUR = 5;
+
+  let titleProgress = $derived.by(() => {
+    scrollY;
+    if (!layoutEl || !innerHeight) return 0;
+
+    const scrolled = -layoutEl.getBoundingClientRect().top;
+    const start = innerHeight * BLUR_START;
+    const end = innerHeight * BLUR_END;
+
+    return Math.min(Math.max((scrolled - start) / (end - start), 0), 1);
+  });
 </script>
 
-<svelte:window onmousemove={handleMouseMove} />
+<svelte:window onmousemove={handleMouseMove} bind:scrollY bind:innerHeight />
 
 <div class="story-container">
-  <main class="main-layout">
-    <div class="title-block">
+  <main class="main-layout" bind:this={layoutEl}>
+    <div
+      class="title-block"
+      style="
+        filter: blur({titleProgress * MAX_BLUR}px);
+        transform: scale({1 - titleProgress * 0.015});
+      "
+    >
       <h1 class="story-title">
         From Viewers<br/>to Rangers
       </h1>
       <p class="story-subtitle">
-        Logging control in Wildlife Protected Areas using images provided by the community.
+        How a community banned from its own forest keeps documenting its destruction
       </p>
       <img src="{base}/images/cambodian-deforestation/CAMBODIA.svg" alt="cambodia_protected_areas" height="fit-content" width="300">
       <p class="low-hight">
@@ -127,10 +91,18 @@
     </main>
     <Text>
         <p>
-          "Please take action to stop them, or the forest and natural resources will be gone soon." This was one of the urgent appeals from a volunteer of the Prey 
-          Lang Community Network (PLCN), a group that has been working for more than 20 years to stop illegal logging in one of 
-          Cambodia's oldest remaining forests. More than 120.829 hectares of tropical forest have been lost between 2001 and 2024.
+          “Transporting timber everyday. Please take action to stop them, or the forest and natural resources will be gone soon.” The plea came from a 
+          volunteer of the Prey Lang Community Network (PLCN), a coalition of villages that has spent more 
+          than 20 years trying to protect one of Cambodia’s oldest remaining forests.
         </p>
+        <h3 style="margin:-.8rem 0rem">Prey Lang Wildlife Sanctuary</h3>
+            <Legend>
+                <LegendItem label="Evergreen" color="#2d4324" />
+                <LegendItem label="Deciduous" color="#92ab4e" />
+                <LegendItem label="Rubber" color="#c7d168" />
+                <LegendItem label="Other Plantation" color="#b65b1f" />
+                <LegendItem label="Cropland" color="#e8e8b1" />
+            </Legend>
         <ImgSliderContainer
           beforeImage="{base}/images/cambodian-deforestation/prey_lang_landcover_2015.png"
           afterImage="{base}/images/cambodian-deforestation/Prey Lang area_landcover_2023.png"
@@ -138,32 +110,42 @@
           afterLabel = "2023"
           initialPos = {50}
           alt = "Comparing images"/>
+        <span class="">Source data: <a href="opendevelopmentcambodia.net">OpenDevelopment Cambodia</a></span>
         <p>
-          Prey Lang Wildlife Sanctuary was declared a protected area in 2016, yet, paradoxically, illegal activity has increased. 
-          In 2020, authorities banned PLCN from patrolling the sanctuary, and illegal logging rose sharply afterwards. 
-          (Quote from an investigator explaining why.) 
+          In the last 20 tears the sanctuary  has lost <strong>21% of the tree cover</strong> it had in 2001. More than half of that loss came after 2018, when it was already protected.
+          In August 2023 the government expanded the sanctuary to almost 490,000 hectares. Conservationists asked how a ministry unable to protect the old borders would patrol the new ones.
         </p>
-    </Text>
-    <ScrollyMap chapters={Stories} />
+    </Text>        
+    <ScrollyMap steps={chapters} layers={layers} />
     <Text>
         <p>
-          Faced with institutional inaction, local communities have gathered 2,400 geotagged pieces of evidence of illegal logging. 
-          "One of the biggest problems is that all the evidence obtained from satellite imagery is denied and treated as invalid 
-          by Cambodian authorities," explains Ida Theilade, lead researcher on the … 
+          "The illegal logging has increased despite the designation of the protected areas due to the lack of enforcement of the Protected Area Law, 
+          government collusion in logging, widespread corruption and the lack of an independent judiciary", explains Ida Theilade, lead researcher on this project. 
+        </p>
+        <p>
+          The sanctuary is not empty land. Volunteers recorded marble and cement operations and gold mining working in or beside it. Some, they say, hold government licences. Theilade points to concessions granted inside protected areas to well-connected businesses.
+        </p>
+        <p>
+          Faced with institutional inaction, local communities have gathered 2,400 geotagged records of illegal logging. Patrollers record what they find with a smartphone app built on icons rather than text, so anyone can report regardless of literacy. Every entry is geotagged and photographed. 
+          Then, researchers at the University of Copenhagen cross-check it with satellite alerts and publish the results on an open platform, IFOROS. 
+          "One of the problems to the use of citizens’ generated data is that all the evidence obtained from satellite imagery is treated as invalid by Cambodian authorities," explains Ida Theilade.
         </p>
     </Text>
     <Text>
       <h3>
           Do you need more evidence? 
       </h3>
-      <SearchBar/>
     </Text>
-  <DeepZoomViewer />
+  <DeepZoomViewer 
+    dziUrl="/mosaic_logging.dzi"
+    indexUrl="/data/mosaic_logging_index.json"
+  />
   <Text>
     <p>
-      Despite their achievements, PLCN members face ongoing harassment and arrests. A report from the same entity indicated that 12 people were arrested and 328,791 
-      cubic metres of wood were confiscated. Eleven of those arrested were sent to court, but activists say this was for show: 
-      “it targets small-time loggers while the big bosses remain free”. 
+      Despite their achievements, PLCN members face ongoing harassment and arrests. After a crackdown in 2023, authorities announced 12 arrests and more than 328,000 cubic metres of seized timber. Activists dismissed it as a show aimed at small-time loggers while the big bosses remained free.
+    </p>
+    <p>
+      The forest is not only timber. Thousands of families around Prey Lang tap resin trees for a year-round income and gather food and medicine from the understorey. Since 2001, its loss has released about 53 million tonnes of CO₂ equivalent. Species such as the banteng, a wild cattle, have seen their numbers fall by more than 70% in a decade.
     </p>
   </Text>
 </div>
@@ -188,7 +170,9 @@
     padding-left: 4rem;
     z-index: 1;
     margin-bottom: 5rem;;
-    height: fit-content; 
+    height: fit-content;
+    will-change: filter, transform;
+    transform-origin: left top;
   }
 
   .story-title {
@@ -308,6 +292,12 @@
     .photo-caption {
       font-size: 0.7rem;
       margin-top: 0.3rem;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .title-block {
+      filter: none !important;
+      transform: none !important;
     }
   }
 </style>
