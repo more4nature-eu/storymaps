@@ -3,6 +3,7 @@
   import { THEMES } from '$lib/components/molecules/maps/themes';
   import { generateStyleFromTheme } from '$lib/styles/maps/styleFactory';
   import type { Map, Marker } from 'maplibre-gl';
+  import 'maplibre-gl/dist/maplibre-gl.css';
 
   interface Props {
     themeName?: keyof typeof THEMES;
@@ -70,26 +71,31 @@
     rotate();
   }
 
+  let pmtilesRegistered = false;
+
   onMount(async () => {
-    const [{ Map, Marker, ScaleControl, addProtocol, config }, pmtilesModule] = await Promise.all([
+    const [maplibreModule, pmtilesModule] = await Promise.all([
       import('maplibre-gl'),
       import('pmtiles')
     ]);
-
-    const { Protocol } = pmtilesModule;
     
-    if (!config?.REGISTERED_PROTOCOLS['pmtiles']) {
-        let protocol = new Protocol();
-        addProtocol('pmtiles', protocol.tile);
+    const maplibregl: typeof import('maplibre-gl') =
+      (maplibreModule as any).default ?? maplibreModule;
+
+    const { Map: MaplibreMap, Marker, ScaleControl } = maplibregl;
+    const { Protocol } = (pmtilesModule as any).default ?? pmtilesModule;
+
+    if (!pmtilesRegistered) {
+      const protocol = new Protocol();
+      maplibregl.addProtocol('pmtiles', protocol.tile);
+      pmtilesRegistered = true;
     }
 
     const theme = THEMES[themeName];
     const style = generateStyleFromTheme(theme);
-
     const isMobile = window.innerWidth < 768;
-    const attribution = !isMobile;
 
-    mapInstance = new Map({
+    mapInstance = new MaplibreMap({
       container: mapContainer,
       style: style,
       center: theme.center,
@@ -100,7 +106,6 @@
       maxBounds: theme.bounds,
       maxPitch: theme.maxPitch,
       bearing: theme.bearing || 0,
-      attributionControl: attribution as any,
       interactive: isInteractive,
       scrollZoom: false,
       boxZoom: false,
@@ -138,6 +143,7 @@
         onmove?.();
     });
   });
+  
 
   onDestroy(() => {
     if (animationFrameId) cancelAnimationFrame(animationFrameId);
@@ -145,10 +151,6 @@
     mapInstance?.remove();
   });
 </script>
-
-<svelte:head>
-  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" />
-</svelte:head>
 
 <div bind:this={mapContainer} class="map-viewport">
   {#if children}
@@ -171,8 +173,8 @@
 
 <style>
     .map-viewport {
-        width: 100% !important;
-        height: 100svh !important;
+        width: 100%;
+        height: 100%;
         position: relative;
     }
 
