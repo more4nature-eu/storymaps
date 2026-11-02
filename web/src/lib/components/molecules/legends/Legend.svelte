@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { Snippet } from "svelte";
-    let { title, children } = $props<{ title?: string, children: Snippet }>();
+    interface Props {title?: string, children: Snippet } 
+    let { title, children } : Props = $props();
 </script>
 
 <div class="legend-container">
@@ -13,15 +14,9 @@
 </div>
 
 <style>
-   .legend-container {
+    .legend-container {
         position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 1.5rem auto 0 auto; 
-        width: fit-content;
-        pointer-events: auto;
+        margin-top: 0.5rem;
     }
 
     .legend-title {
@@ -29,29 +24,32 @@
         font-size: 0.75rem;
         font-weight: bold;
         text-transform: uppercase;
-        color: var(--bg-color, #243B4A);
-        text-align: center;
+        color: var(--text-main);
+        font-family: var(--font-sans);
+        text-align: left;
     }
 
     .legend-items {
         display: flex;
-        flex-direction: row; 
-        flex-wrap: wrap; 
-        justify-content: center;
-        align-items: center;
-        gap: 1rem; 
+        flex-wrap: wrap;
+        gap: 0;
     }
 
     @media (max-width: 768px) {
         .legend-container {
-            margin-top: .5rem;
+            position: relative;
+            margin-top: 0.85rem;
         }
         .legend-title {
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            margin-bottom:0.5rem;
         }
         .legend-items {
-            gap: 0.5rem;
+            display: flex;
+            flex-direction: row; 
+            flex-wrap: wrap;
+            justify-content: left;
+            align-items: left;
         }
     }
 </style>

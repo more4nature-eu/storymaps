@@ -1,4 +1,16 @@
 <script lang="ts">
+    interface Props {
+        label: string
+        color: string,
+        type ?: 'square' | 'circle' | 'line' | 'rect',
+        variant ?: 'solid' | 'outline' | 'dashed',
+        size ?: 'sm' | 'md' | 'lg',
+        opacity ?: number,
+        faded ?: boolean,
+        onHover ?: () => void,
+        onLeave ?: () => void,
+        onClick ?: () => void,
+    }
     let {
         label,
         color = '#000',
@@ -10,18 +22,7 @@
         onHover,
         onLeave,
         onClick
-    } = $props<{
-        label: string
-        color: string,
-        type ?: 'square' | 'circle' | 'line' | 'rect',
-        variant ?: 'solid' | 'outline' | 'dashed',
-        size ?: 'sm' | 'md' | 'lg',
-        opacity ?: number,
-        faded ?: boolean,
-        onHover ?: () => void,
-        onLeave ?: () => void,
-        onClick ?: () => void,
-    }>();
+    } : Props = $props();
 
     const sizeMap = {
         sm: '8px',

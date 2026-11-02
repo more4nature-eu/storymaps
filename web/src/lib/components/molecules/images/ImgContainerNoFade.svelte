@@ -6,7 +6,7 @@
         alt?: string;
         caption?: string;
         credits?: string;
-        size?: 'wide' | 'full';
+        size?: 'wide' | 'full' | 'little';
         isLcp?: boolean;
         aspectRatio?: string;
         width?: number | string;
@@ -115,12 +115,12 @@
         overflow: hidden;
         border-radius: 6px;
         width: 100%;
-        background-color: var(--bg-color); 
+        background-color: var(--bg-color);
+        height: 70vh;
     }
 
     .focus-image.full .img-wrapper {
         border-radius: 0;
-        height: 95vh;
     }
 
     img {
