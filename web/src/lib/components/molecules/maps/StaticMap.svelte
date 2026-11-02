@@ -159,7 +159,7 @@
 
   function openStoryPage(id?: string) {
     if (id) {
-        goto(`/storymaps/${id}`);
+        goto(`/${id}`);
     }
     }
 </script>
