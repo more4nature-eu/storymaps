@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:cc="http://creativecommons.org/ns#" baseProfile="tiny" version="1.2" viewBox="0 0 542.6 626.6">
+  <!-- Generator: Adobe Illustrator 30.8.2, SVG Export Plug-In . SVG Version: 2.1.4 Build 7)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #323232;
+        font-family: KohinoorDevanagari-Regular, 'Kohinoor Devanagari';
+      }
+
+      .st0, .st1, .st2, .st3 {
+        font-size: 12px;
+      }
+
+      .st4 {
+        fill: #b65b1f;
+      }
+
+      .st1, .st2, .st5, .st6 {
+        fill: #243b4a;
+      }
+
+      .st1, .st3 {
+        font-family: Lexend-Light, Lexend;
+        font-weight: 300;
+      }
+
+      .st7 {
+        fill: #e3e184;
+      }
+
+      .st8 {
+        fill: #e8e8b1;
+      }
+
+      .st9 {
+        isolation: isolate;
+      }
+
+      .st10 {
+        fill: #d7c29e;
+      }
+
+      .st11 {
+        fill: #a0e8b6;
+      }
+
+      .st12 {
+        fill: #c7d168;
+      }
+
+      .st2 {
+        font-family: Lexend-Regular, Lexend;
+      }
+
+      .st13 {
+        fill: #84a15d;
+      }
+
+      .st14 {
+        fill: #2d4324;
+      }
+
+      .st15 {
+        fill: #b6e8a5;
+      }
+
+      .st16 {
+        fill: #4f5d6d;
+      }
+
+      .st17 {
+        fill: #92ab4e;
+      }
+
+      .st5 {
+        font-family: Lexend-Bold, Lexend;
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .st3 {
+        fill: #3b3b3b;
+      }
+
+      .st18 {
+        fill: #fff042;
+      }
+
+      .st19 {
+        fill: #89cd66;
+      }
+    </style>
+  </defs>
+  <image width="3768" height="4353" transform="translate(0 0) scale(.1)" xlink:href="prey_lang_landcover_2015.png"/>
+  <image class="st9" width="1875" height="588" transform="translate(588.1 471.7) scale(.2)" xlink:href="Prey Lang area-1.png"/>
+  <rect class="st6" x="17.1" y="611.2" width="52.5" height="3.1"/>
+  <text class="st2" transform="translate(13.7 605.1)"><tspan x="0" y="0">0</tspan></text>
+  <text class="st2" transform="translate(52.1 605.1)"><tspan x="0" y="0">10 km</tspan></text>
+  <text class="st5" transform="translate(17.1 383.7)"><tspan x="0" y="0">Prey Lang </tspan><tspan x="0" y="28.8">Wildlife </tspan><tspan x="0" y="57.6">Sanctuary</tspan></text>
+  <text class="st1" transform="translate(17.1 458.5)"><tspan x="0" y="0">Land cover change</tspan></text>
+  <rect class="st18" x="20.1" y="470.6" width="6.9" height="6.9" rx="1" ry="1"/>
+  <text class="st3" transform="translate(30.2 477.6)"><tspan x="0" y="0">Mangrove</tspan></text>
+  <rect class="st4" x="20.4" y="487.2" width="6.9" height="6.9" rx="1" ry="1"/>
+  <text class="st0" transform="translate(30.5 494.3)"><tspan x="0" y="0">Other Plantation</tspan></text>
+  <rect class="st16" x="20.8" y="504.6" width="6.9" height="6.9" rx="1" ry="1"/>
+  <text class="st0" transform="translate(30.9 511.8)"><tspan x="0" y="0">Water</tspan></text>
+  <rect class="st19" x="20.4" y="520.4" width="6.9" height="6.9" rx="1" ry="1"/>
+  <text class="st0" transform="translate(30.5 527.6)"><tspan x="0" y="0">Shrub</tspan></text>
+  <rect class="st7" x="20.8" y="536.2" width="6.9" height="6.9" rx="1" ry="1"/>
+  <text class="st0" transform="translate(30.9 543.4)"><tspan x="0" y="0">Rice</tspan></text>
+  <rect class="st8" x="20.8" y="551.3" width="6.9" height="6.9" rx="1" ry="1"/>
+  <text class="st0" transform="translate(30.9 558.5)"><tspan x="0" y="0">Cropland</tspan></text>
+  <rect class="st10" x="20.8" y="567.4" width="6.9" height="6.9" rx="1" ry="1"/>
+  <text class="st0" transform="translate(30.9 574.5)"><tspan x="0" y="0">Grass</tspan></text>
+  <rect class="st14" x="137.1" y="471.5" width="6.9" height="6.9" rx="1" ry="1"/>
+  <text class="st3" transform="translate(147.2 478.5)"><tspan x="0" y="0">Evergreen</tspan></text>
+  <rect class="st17" x="137.4" y="488.1" width="6.9" height="6.9" rx="1" ry="1"/>
+  <text class="st0" transform="translate(147.5 495.2)"><tspan x="0" y="0">Deciduous</tspan></text>
+  <rect class="st11" x="137.8" y="505.5" width="6.9" height="6.9" rx="1" ry="1"/>
+  <text class="st0" transform="translate(147.9 512.7)"><tspan x="0" y="0">Wetland</tspan></text>
+  <rect class="st12" x="137.4" y="521.3" width="6.9" height="6.9" rx="1" ry="1"/>
+  <text class="st0" transform="translate(147.5 528.5)"><tspan x="0" y="0">Rubber</tspan></text>
+  <rect class="st15" x="137.8" y="537.1" width="6.9" height="6.9" rx="1" ry="1"/>
+  <text class="st0" transform="translate(147.9 544.3)"><tspan x="0" y="0">Flooded Forest</tspan></text>
+  <rect class="st13" x="137.8" y="552.2" width="6.9" height="6.9" rx="1" ry="1"/>
+  <text class="st0" transform="translate(147.9 559.4)"><tspan x="0" y="0">Semi-evergreen</tspan></text>
+</svg>
