@@ -110,7 +110,7 @@
           afterLabel = "2023"
           initialPos = {50}
           alt = "Comparing images"/>
-        <span class="">Source data: <a href="opendevelopmentcambodia.net">OpenDevelopment Cambodia</a></span>
+        <span class="">Source data: <a href="https:opendevelopmentcambodia.net">OpenDevelopment Cambodia</a></span>
         <p>
           In the last 20 years the sanctuary  has lost <strong>21% of the tree cover</strong> it had in 2001. More than half of that loss came after 2018, when it was already protected.
           In August 2023 the government expanded the sanctuary to almost 490,000 hectares. Conservationists asked how a ministry unable to protect the old borders would patrol the new ones.
