@@ -2,28 +2,11 @@ import { base } from '$app/paths';
 import type { Chapter, LayerDef } from '$lib/types/chapter';
 
 export const layers: LayerDef[] = [
-  {
-    id: 'forest_loss',
-    sourceType: 'vector',
-    type: 'fill',
-    url: `pmtiles://${base}/data/forest_loss_cambodja.pmtiles`,
-    sourceLayer: 'lossbyyear_Hansen',
-    paint: { 'fill-color': ['step', ['get','DN'], '#e9c46a', 16, '#9b2226'], 'fill-opacity': 1 }
-    },
-    {
-    id:'landcover_protected_areas_2015',
-        sourceType: 'raster',
-        type:'raster',
-        url:`pmtiles://${base}/data/landcover_2015_project_areas.pmtiles`,
-        paint:{
-            'raster-opacity':1
-        }
-    },
     {
     id:'landcover_protected_areas_2023',
         sourceType: 'raster',
         type:'raster',
-        url:`pmtiles://${base}/data/landcover_2023_project_areas.pmtiles`,
+        url:`pmtiles://https://more4nature-storage.fablabbcn.org/d-19/data/landcover_2023_project_areas.pmtiles`,
         paint:{
             'raster-opacity':1
         }
@@ -32,7 +15,7 @@ export const layers: LayerDef[] = [
         id: 'protected_areas_fill',
         sourceType: 'vector',
         type: 'fill',
-        url: `pmtiles://${base}/data/wildlife_protected_areas.pmtiles`,
+        url: `pmtiles://https://more4nature-storage.fablabbcn.org/d-19/data/wildlife_protected_areas.pmtiles`,
         sourceLayer: 'Reprojected',
         paint: {
             'fill-color': '#c7d168',
@@ -43,7 +26,7 @@ export const layers: LayerDef[] = [
         id: 'protected_areas_outline',
         sourceType: 'vector',
         type: 'line',
-        url: `pmtiles://${base}/data/wildlife_protected_areas.pmtiles`,
+        url: `pmtiles://https://more4nature-storage.fablabbcn.org/d-19/data/wildlife_protected_areas.pmtiles`,
         sourceLayer: 'Reprojected',
         paint: {
             'line-color': '#2d4324',
@@ -55,14 +38,13 @@ export const layers: LayerDef[] = [
         id: 'forest_loss_animated',
         sourceType: 'vector',
         type: 'fill',
-        url: `pmtiles://${base}/data/forest_loss_protected_areas_hansen_2025.pmtiles`,
+        url: `pmtiles://https://more4nature-storage.fablabbcn.org/d-19/data/forest_loss_protected_areas_hansen_2025.pmtiles`,
         sourceLayer: 'Dissolved',
         paint: {
             'fill-color': ['interpolate', ['linear'], ['get', 'DN'], 1, '#d5ad4a', 25, '#5c0339'],
             'fill-opacity': 0.9
         }
         }
-
 ];
 
 const LEGEND_BEFORE = {

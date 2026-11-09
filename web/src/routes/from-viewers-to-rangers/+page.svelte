@@ -137,8 +137,8 @@
       </h3>
     </Text>
   <DeepZoomViewer 
-    dziUrl="/mosaic_logging.dzi"
-    indexUrl="/data/mosaic_logging_index.json"
+    dziUrl="https://more4nature-storage.fablabbcn.org/d-19/mosaic_logging.dzi"
+    indexUrl="https://more4nature-storage.fablabbcn.org/d-19/data/mosaic_logging_index.json"
   />
   <Text>
     <p>
