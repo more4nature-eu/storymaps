@@ -69,7 +69,7 @@
         Carlos Albaladejo 
       </p>
       <p class="low-hight">
-        Photographies
+        Photographs
       </p>
       <p class="credits">
         Prey Lang Community Network

@@ -88,14 +88,6 @@ export const chapters: Chapter[] = [
         mobileCamera: { center: [105.52, 13.0], zoom: 9.5, pitch: 15, bearing: 0 },
         layers: ['protected_areas_outline'],
         media: { src: '/images/cambodian-deforestation/PLI-41499.jpg', alt: '', caption: '', }
-    },
-   {
-        id: 'step-3',
-        title: 'Evidence from the ground',
-        text: 'Banned from patrolling the sanctuary, the community kept documenting. Its members have recorded 2,400 geotagged cases of illegal logging, each with a photo.',
-        camera: { center: [105.52, 13.2], zoom: 9.2, pitch: 0, bearing: 0 },
-        mobileCamera: { center: [105.52, 13.0], zoom: 7.8, pitch: 0, bearing: 0 },
-        layers: ['protected_areas_outline', 'forest_loss_animated', 'patrol_records']
     }
 ];
 
@@ -116,7 +108,7 @@ export const photos: Photo[] = [
   {
     id: 2,
     img: `${base}/images/cambodian-deforestation/65B6F92C-63AF-4CC3-92E8-4E0CD83F00FD.jpeg`,
-    caption: 'Illegal loggers in (place and date) cutting a (species) tree in (place), Cambodia.',
+    caption: 'Illegal loggers cutting trees in Chhertheal Bang Keou, Cambodia, on January 30, 2019.',
     aspectRatio: '4 / 5'
   },
   {
