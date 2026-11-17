@@ -80,7 +80,7 @@
 					EU Open Research Repository (Pilot)
 				</a>
 			</p>
-			<a href="/privacy-policy">Privacy Policy</a>
+			<a href="https://more4nature.eu/privacy-policy">Privacy Policy</a>
 		</div>
 	</div>
 </footer>
