@@ -2,6 +2,7 @@
   import "$lib/styles/global.css";
   import Header from "$lib/components/organisms/templates/Header.svelte";
   import { page } from "$app/state";
+  import Footer from "$lib/components/organisms/templates/Footer.svelte";
   
   let { children } = $props();
   const isDark = $derived(page.data.isDark ?? false);
@@ -12,6 +13,7 @@
 <main>
   {@render children()}
 </main>
+<Footer />
 
 <style>
   main {

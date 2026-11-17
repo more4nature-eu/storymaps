@@ -3,7 +3,7 @@
 </script>
 
 <div class="logo" class:scrolled={isScrolled} class:inverted={menuOpen}>
-  <a href="https://more4nature.eu/" aria-label="more4nature">
+  <a href="/" aria-label="more4nature">
       {#if !isScrolled}
         <div class="logo-full" aria-label="more4nature logo long">
           <svg xmlns="http://www.w3.org/2000/svg" width="839" height="215" viewBox="0 0 839 215" fill="none">
